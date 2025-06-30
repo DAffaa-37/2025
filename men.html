@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ken Balqis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        // Inisialisasi EmailJS dengan User ID Anda
+        (function() {
+            emailjs.init("service_f0d984m");
+        })();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #f9f5f0 0%, #f0e8df 100%);
+            color: #5a4e42;
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.8;
+            transition: background 2s ease;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 20;
+        }
+        
+        header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            color: #8c7b6c;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .name {
+            font-size: 3.2rem;
+            font-weight: 400;
+            color: #7a6d5e;
+            margin: 40px 0;
+            letter-spacing: 1px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease 0.2s;
+            line-height: 1.4;
+        }
+        
+        .name:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 1px;
+            background: #d4cdc3;
+            opacity: 0.5;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #a99e92;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            font-style: italic;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease 0.4s;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 4px;
+            padding: 60px 50px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 4px solid #d4cdc3;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        
+        .card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" stroke="%23d4cdc3" stroke-width="0.5" x="10" y="10" width="80" height="80" rx="10" ry="10"/></svg>');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .card h2 {
+            color: #8c7b6c;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 400;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .card h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background: #d4cdc3;
+        }
+        
+        .card p {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #6b6155;
+        }
+        
+        .wishes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .wish-item {
+            position: relative;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6b6155;
+            font-style: italic;
+            border-radius: 4px;
+        }
+        
+        .signature {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #8c7b6c;
+            margin-top: 50px;
+            font-weight: 400;
+            position: relative;
+            padding-top: 20px;
+        }
+        
+        .signature:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: #d4cdc3;
+        }
+        
+        .divider {
+            height: 1px;
+            background: #e5dfd8;
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            width: 100%;
+            font-size: 1rem;
+            color: #a99e92;
+            background: rgba(255, 255, 255, 0.4);
+            border-top: 1px solid #e5dfd8;
+            position: relative;
+            z-index: 10;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            .name {
+                font-size: 1.8rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .card {
+                padding: 40px 20px;
+            }
+            .card h2 {
+                font-size: 1.6rem;
+            }
+            .card p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        .message-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(249, 245, 240, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+        
+        .message-overlay h2 {
+            font-size: 3rem;
+            color: #8c7b6c;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .message-overlay p {
+            font-size: 1.5rem;
+            color: #a99e92;
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .enter-button {
+            padding: 15px 50px;
+            background: transparent;
+            border: 1px solid #8c7b6c;
+            color: #8c7b6c;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 3px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .enter-button:hover {
+            background: #8c7b6c;
+            color: #f9f5f0;
+        }
+        
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .elegant-ornament {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.03;
+            z-index: 1;
+            border: 1px solid #8c7b6c;
+            border-radius: 50%;
+        }
+        
+        .ornament-1 {
+            top: 5%;
+            left: 5%;
+        }
+        
+        .ornament-2 {
+            bottom: 10%;
+            right: 5%;
+            transform: rotate(45deg);
+        }
+        
+        .ornament-3 {
+            top: 20%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            border: none;
+            border-top: 1px solid #8c7b6c;
+            border-right: 1px solid #8c7b6c;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(140, 123, 108, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 30;
+            transition: all 0.3s ease;
+            border: 1px solid #d4cdc3;
+            opacity: 1;
+        }
+        
+        .music-control:hover {
+            transform: scale(1.1);
+            background: rgba(140, 123, 108, 0.2);
+        }
+        
+        .music-control i {
+            font-size: 24px;
+            color: #8c7b6c;
+        }
+        
+        .secret-btn {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(140, 123, 108, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 30;
+            transition: all 0.3s ease;
+            border: 1px solid #d4cdc3;
+            opacity: 1;
+        }
+        
+        .secret-btn:hover {
+            transform: scale(1.1);
+            background: rgba(140, 123, 108, 0.2);
+        }
+        
+        .secret-btn i {
+            font-size: 24px;
+            color: #8c7b6c;
+        }
+        
+        .secret-message {
+            position: fixed;
+            top: 110px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #d4cdc3;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            z-index: 30;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            font-size: 1rem;
+            color: #5a4e42;
+            line-height: 1.5;
+            text-align: center;
+        }
+        
+        .secret-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .elegant-line {
+            height: 1px;
+            background: #d4cdc3;
+            width: 80%;
+            margin: 15px auto;
+            opacity: 0.5;
+        }
+        
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .memory-box {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border-left: 4px solid #d4cdc3;
+            position: relative;
+        }
+        
+        .memory-box p {
+            font-size: 1.2rem;
+            color: #6b6155;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .memory-box:before {
+            content: """;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 5rem;
+            color: #d4cdc3;
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .memory-box:after {
+            content: """;
+            position: absolute;
+            bottom: -40px;
+            right: 20px;
+            font-size: 5rem;
+            color: #d4cdc3;
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .apology-section {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border-right: 4px solid #d4cdc3;
+            position: relative;
+        }
+        
+        .apology-section p {
+            font-size: 1.2rem;
+            color: #8c7b6c;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .heart-animation {
+            position: fixed;
+            font-size: 2rem;
+            color: #e8a3a3;
+            opacity: 0;
+            z-index: 5;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .quote-container {
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+        
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #7a6d5e;
+            line-height: 1.8;
+        }
+        
+        /* Form Styles */
+        .response-form {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 40px;
+            margin: 60px auto 30px;
+            max-width: 600px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+            z-index: 15;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease 0.6s;
+        }
+        
+        .response-form.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .response-form h3 {
+            color: #8c7b6c;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5dfd8;
+        }
+        
+        .radio-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 15px 25px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #e5dfd8;
+        }
+        
+        .radio-option:hover {
+            background: rgba(249, 245, 240, 0.9);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .radio-option input[type="radio"] {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            accent-color: #8c7b6c;
+        }
+        
+        .submit-btn {
+            padding: 15px 50px;
+            background: transparent;
+            border: 1px solid #8c7b6c;
+            color: #8c7b6c;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .submit-btn:hover {
+            background: #8c7b6c;
+            color: #f9f5f0;
+        }
+        
+        .response-message {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(249, 245, 240, 0.9);
+            border-radius: 8px;
+            display: none;
+            font-size: 1.2rem;
+            color: #6b6155;
+        }
+        
+        .confirmation {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #7a6d5e;
+            margin: 40px 0;
+            font-style: italic;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+        
+        /* Loading Animation */
+        .loader {
+            display: none;
+            width: 48px;
+            height: 48px;
+            margin: 20px auto;
+            border: 5px solid #f0e8df;
+            border-bottom-color: #8c7b6c;
+            border-radius: 50%;
+            animation: rotation 1s linear infinite;
+        }
+        
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="message-overlay" id="intro-message">
+        <h2>A Special Birthday Message</h2>
+        <p>For Ken Balqis Noor Al Ahkam</p>
+        <button class="enter-button" id="enter-btn">Open Message</button>
+    </div>
+    
+    <audio id="birthday-music" loop>
+        <source src="source/You re still the one - Graziatto.mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="elegant-ornament ornament-1"></div>
+    <div class="elegant-ornament ornament-2"></div>
+    <div class="elegant-ornament ornament-3"></div>
+    
+    <div class="music-control" id="music-control">
+        <i class="fas fa-pause"></i>
+    </div>
+    
+    <div class="secret-btn" id="secret-btn">
+        <i class="fas fa-envelope"></i>
+    </div>
+    
+    <div class="secret-message" id="secret-message">
+        <p>Your happiness has always been my greatest wish, even if it meant letting you go</p>
+        <div class="elegant-line"></div>
+        <p>With all my love,<br>K</p>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 id="main-title">Happy Birthday</h1>
+            <div class="name" id="name">Ken Balqis Noor Al Ahkam</div>
+            <p class="subtitle" id="subtitle">May this day bring you peace and fill your heart with warmth</p>
+        </header>
+        
+        <div class="content-wrapper">
+            <div class="card" id="card1">
+                <h2>Reflections</h2>
+                
+                <div class="quote-container">
+                    <p class="quote">"Some stories don't have a clear beginning, middle, and end. Life is about not knowing, having to change, taking the moment and making the best of it, without knowing what's going to happen next."</p>
+                </div>
+                
+                <p>On your special day, I want to share something I've needed to say for a long time. I know we're no longer together, and that was my choice - a decision I made for reasons that didn't involve you. I asked you to move on with someone else because I couldn't bear to see you suffering any longer.</p>
+                
+                <div class="apology-section">
+                    <p>I apologize from the deepest part of my heart for all the hurtful words I said. I regret every painful thing that came from my lips. But please know that everything I did, every harsh word I spoke, was because I wanted to see you happy again, to see you smile like you used to before all this happened.</p>
+                </div>
+                
+                <div class="memory-box">
+                    <p>"Your laughter was my favorite melody, your smile my most cherished view. Seeing you happy again has been the only peace I've found in this storm."</p>
+                </div>
+                
+                <p>There are battles I must face alone, challenges that are mine to bear. I didn't want you to feel what I was feeling, didn't want to burden you with the darkness I was going through. My actions were never about you not being enough - they were about me being too broken to let you stay.</p>
+            </div>
+            
+            <div class="card" id="card2">
+                <h2>Your Happiness</h2>
+                
+                <div class="quote-container">
+                    <p class="quote">"Letting go doesn't mean that you don't care about someone anymore. It's just realizing that the only person you really have control over is yourself."</p>
+                </div>
+                
+                <p>Now, when I see you happy with him, my heart finds a strange peace. Seeing your smile return, the light back in your eyes - that's all I ever wanted. Even if it couldn't be with me, your happiness has always been my greatest wish.</p>
+                
+                <div class="wishes-container">
+                    <div class="wish-item">I'm genuinely happy to see you smiling again</div>
+                    <div class="wish-item">I share your joy in finding new happiness and meaning</div>
+                    <div class="wish-item">You deserve all the love and happiness this world can offer</div>
+                    <div class="wish-item">May your heart always feel as light as it does now</div>
+                    <div class="wish-item">May each new day bring you reasons to smile</div>
+                </div>
+                
+                <div class="memory-box">
+                    <p>"In your happiness, I found my redemption. In your smile, I found my peace. That's all I ever needed."</p>
+                </div>
+                
+                <p>From afar, I'll continue to pray for your wellbeing. I won't disturb your peace anymore, won't cast shadows on your bright new beginning. This chapter is yours to write without my interference.</p>
+            </div>
+            
+            <div class="card" id="card3">
+                <h2>Parting Words</h2>
+                
+                <div class="quote-container">
+                    <p class="quote">"Goodbyes are only for those who love with their eyes. Because for those who love with heart and soul, there is no such thing as separation."</p>
+                </div>
+                
+                <p>Now you've found what I meant back then - you're on your path and I'm on mine. The journey we shared has ended, but the love I have for you hasn't diminished - it's simply transformed into a quiet wish for your happiness.</p>
+                
+                <div class="apology-section">
+                    <p>Forgive me for all the pain I caused. Forgive me for every harsh word spoken. Forgive me for pushing you away when I should have held you closer. Everything I did came from loving you more than you could ever know - a love that wanted to protect you even from myself.</p>
+                </div>
+                
+                <p>I promise not to interfere in your life anymore. I will learn to be truly "okay" with your happiness with him. My greatest gift to you now is my absence, my silence, my restraint - because your peace means more to me than my desire to be near you.</p>
+                
+                <div class="memory-box">
+                    <p>"True love isn't about possession - it's about appreciation. And I will always appreciate what we had, what you gave me, and the person you helped me become."</p>
+                </div>
+                
+                <p>Thank you for all the beautiful memories, for the lessons in love and loss, for every precious moment we shared. I'll always be grateful to have been part of your story. May your birthday be filled with the kind of joy you've brought to others, and may your path ahead be as bright as your beautiful spirit.</p>
+                
+                <p class="signature">With all my love and deepest apologies,<br>K</p>
+                
+                <div class="quote-container">
+                    <p class="quote">"I loved you then, I love you still - I have to, it's just who I am. But now I love you quietly, from a distance, without expectation, because your happiness is the only thing that matters."</p>
+                </div>
+            </div>
+            
+            <!-- Card Baru: Fokus di Jalan Masing-masing -->
+            <div class="card" id="card4">
+                <h2>Our Separate Paths</h2>
+                
+                <div class="quote-container">
+                    <p class="quote">"Sometimes the most loving thing you can do is to step back and allow someone to find their own way, even if it means walking without you."</p>
+                </div>
+                
+                <p>I want you to know that I'm fully committed to letting you live your life peacefully with the person you've chosen. He deserves your full attention, and you deserve to build something beautiful without any shadows from the past.</p>
+                
+                <div class="apology-section">
+                    <p>I'm working on my own journey now - finding my purpose and healing. This isn't about forgetting you, but about respecting your new life and creating space for both of us to grow separately.</p>
+                </div>
+                
+                <div class="memory-box">
+                    <p>"I'll always cherish what we had, but I understand now that letting go is the final act of love I can offer you."</p>
+                </div>
+                
+                <p>I wish you nothing but the deepest joy, the purest love, and the most fulfilling journey ahead. May your path be filled with light and your heart with contentment.</p>
+            </div>
+            
+            <!-- Card Baru: Pertanyaan tentang Foto -->
+            <div class="card" id="card5">
+                <h2>A Final Question</h2>
+                
+                <div class="quote-container">
+                    <p class="quote">"Memories are the treasures that we keep locked deep within the storehouse of our souls, to keep our hearts warm when we are alone."</p>
+                </div>
+                
+                <p>Before I truly step away, I have one last question that's been weighing on my heart. This is the only thing I'll ever ask of you.</p>
+                
+                <div class="confirmation">
+                    <p>Would you allow me to keep our photos? Not to dwell on the past, but simply to honor the beautiful moments we shared. I promise they'll remain private, a quiet part of my history that I'll never use to intrude on your present happiness.</p>
+                </div>
+                
+                <div class="apology-section">
+                    <p>If you'd prefer I delete them, I'll understand and respect your wishes completely. This is entirely your decision, and I'll honor whatever you choose.</p>
+                </div>
+                
+                <div class="memory-box">
+                    <p>"Each photo is a moment frozen in time when we both believed in forever. I'd cherish the chance to preserve these memories, but your comfort matters more than my sentimentality."</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form Respons -->
+        <div class="response-form" id="response-form">
+            <h3>Your Answer Matters to Me</h3>
+            <p>Please let me know your decision about the photos:</p>
+            
+            <div class="radio-options">
+                <label class="radio-option">
+                    <input type="radio" name="photo-answer" value="keep">
+                    Yes, you may keep them
+                </label>
+                
+                <label class="radio-option">
+                    <input type="radio" name="photo-answer" value="delete">
+                    Please delete them
+                </label>
+            </div>
+            
+            <button class="submit-btn" id="submit-btn">Submit Answer</button>
+            
+            <div class="loader" id="loader"></div>
+            
+            <div class="response-message" id="response-message">
+                <!-- Message will appear here -->
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <footer>
+            <p>Created with heartfelt wishes for your special day | © 2023</p>
+        </footer>
+    </div>
+
+    <script>
+        // Elements to animate
+        const elementsToAnimate = [
+            document.getElementById('main-title'),
+            document.getElementById('name'),
+            document.getElementById('subtitle'),
+            document.getElementById('card1'),
+            document.getElementById('card2'),
+            document.getElementById('card3'),
+            document.getElementById('card4'),
+            document.getElementById('card5'),
+            document.getElementById('response-form')
+        ];
+        
+        // Intersection Observer for scroll animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Observe all elements
+        elementsToAnimate.forEach(el => {
+            if (el) {
+                observer.observe(el);
+            }
+        });
+        
+        // Intro message
+        const enterBtn = document.getElementById('enter-btn');
+        const music = document.getElementById('birthday-music');
+        const musicControl = document.getElementById('music-control');
+        let musicPlaying = true;
+        
+        enterBtn.addEventListener('click', function() {
+            const overlay = document.getElementById('intro-message');
+            overlay.classList.add('hidden');
+            
+            // Play music
+            music.play();
+            
+            // Show header elements immediately
+            document.getElementById('main-title').classList.add('visible');
+            document.getElementById('name').classList.add('visible');
+            document.getElementById('subtitle').classList.add('visible');
+            
+            // Create floating hearts
+            createHearts();
+        });
+        
+        // Create floating hearts
+        function createHearts() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart-animation');
+                    heart.innerHTML = '<i class="fas fa-heart"></i>';
+                    
+                    // Random position
+                    const leftPos = Math.random() * 100;
+                    heart.style.left = `${leftPos}%`;
+                    
+                    // Random size
+                    const size = Math.random() * 2 + 1;
+                    heart.style.fontSize = `${size}rem`;
+                    
+                    // Random color
+                    const colors = ['#e8a3a3', '#d4cdc3', '#c5b8a8', '#a99e92'];
+                    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    // Random animation
+                    heart.style.animation = `floatUp ${Math.random() * 5 + 5}s linear forwards`;
+                    
+                    document.body.appendChild(heart);
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 6000);
+                }, i * 300);
+            }
+        }
+        
+        // Music control
+        musicControl.addEventListener('click', function() {
+            if (musicPlaying) {
+                music.pause();
+                musicControl.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                music.play();
+                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            musicPlaying = !musicPlaying;
+        });
+        
+        // Secret button
+        const secretBtn = document.getElementById('secret-btn');
+        const secretMessage = document.getElementById('secret-message');
+        let messageVisible = false;
+        
+        secretBtn.addEventListener('click', function() {
+            messageVisible = !messageVisible;
+            
+            if (messageVisible) {
+                secretMessage.classList.add('show');
+            } else {
+                secretMessage.classList.remove('show');
+            }
+        });
+        
+        // Add a special effect when the page is loaded
+        window.addEventListener('load', function() {
+            document.body.style.background = "linear-gradient(135deg, #f9f5f0 0%, #e8dfd5 100%)";
+            
+            setTimeout(() => {
+                document.body.style.background = "linear-gradient(135deg, #f9f5f0 0%, #f0e8df 100%)";
+            }, 2000);
+        });
+        
+        // Form submission
+        const submitBtn = document.getElementById('submit-btn');
+        const responseMessage = document.getElementById('response-message');
+        const loader = document.getElementById('loader');
+        
+        submitBtn.addEventListener('click', function() {
+            const selectedOption = document.querySelector('input[name="photo-answer"]:checked');
+            
+            if (!selectedOption) {
+                responseMessage.textContent = "Please select an option before submitting.";
+                responseMessage.style.display = "block";
+                responseMessage.style.color = "#c57b7b";
+                return;
+            }
+            
+            const answer = selectedOption.value;
+            const answerText = answer === "keep" ? 
+                "Yes, you may keep the photos" : 
+                "Please delete all photos";
+            
+            // Show loading animation
+            loader.style.display = "block";
+            submitBtn.disabled = true;
+            
+            // Kirim email
+            sendEmail(answerText);
+            
+            // Tampilkan pesan balasan
+            if (answer === "keep") {
+                responseMessage.innerHTML = "Thank you for your kindness. I'll cherish these memories privately.<br><br>Your answer has been sent to me.";
+                responseMessage.style.color = "#7a9c7a";
+            } else {
+                responseMessage.innerHTML = "I understand and respect your decision. The photos will be deleted.<br><br>Your answer has been sent to me.";
+                responseMessage.style.color = "#c57b7b";
+            }
+            
+            responseMessage.style.display = "block";
+            
+            // Create visual confirmation
+            const confirmation = document.createElement('div');
+            confirmation.innerHTML = '<i class="fas fa-check-circle"></i>';
+            confirmation.style.position = 'fixed';
+            confirmation.style.bottom = '20px';
+            confirmation.style.right = '20px';
+            confirmation.style.fontSize = '3rem';
+            confirmation.style.color = '#7a9c7a';
+            confirmation.style.zIndex = '1000';
+            document.body.appendChild(confirmation);
+            
+            setTimeout(() => {
+                confirmation.style.transition = 'all 1s ease';
+                confirmation.style.opacity = '0';
+                setTimeout(() => {
+                    confirmation.remove();
+                }, 1000);
+            }, 2000);
+        });
+        
+        // Fungsi untuk mengirim email dengan EmailJS
+        function sendEmail(answer) {
+            const now = new Date();
+            const formattedTime = now.toLocaleString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            const templateParams = {
+                to_name: "Daffa",   // Nama Anda
+                name: "Ken Balqis",
+                time: formattedTime,
+                message: answer,
+                reply_to: "ken@example.com" // Email Ken (jika ada)
+            };
+
+            emailjs.send('default_service', 'template_r9buuru', templateParams)
+                .then(function(response) {
+                    console.log('Email sent!', response.status, response.text);
+                    loader.style.display = "none";
+                }, function(error) {
+                    console.log('Failed to send email', error);
+                    loader.style.display = "none";
+                    submitBtn.disabled = false;
+                    alert('Failed to send email. Please try again later.');
+                });
+        }
+    </script>
+</body>
+</html>
